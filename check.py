@@ -4,7 +4,7 @@ import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def send_email():
+def send_email(ahr999_index):
     # 邮件设置
     mail_content = "太好啦，ahr999_index小于1.2，速速定投！！！当前ahr999_index的值为: {}".format(ahr999_index)
     sender_address = os.environ['SENDER_EMAIL']
@@ -29,7 +29,7 @@ def check_ahr999_index():
     response = requests.get('http://43.129.241.254:5000/info/')
     ahr999_index = float(response.json()['ahr999'])
     if ahr999_index < 1.2:
-        send_email()
+        send_email(ahr999_index)  # Pass ahr999_index as an argument to send_email
 
 if __name__ == "__main__":
     check_ahr999_index()
