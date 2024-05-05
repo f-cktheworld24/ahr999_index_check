@@ -7,9 +7,12 @@ from email.mime.text import MIMEText
 def send_email(ahr999_index):
     # 邮件设置
     mail_content = "太好啦，ahr999_index小于1.2，速速定投！！！当前ahr999_index的值为: {}".format(ahr999_index)
-    sender_address = os.environ['SENDER_EMAIL']
-    sender_pass = os.environ['SENDER_PASSWORD']
-    receiver_address = os.environ['RECEIVER_EMAIL']
+    # sender_address = os.environ['SENDER_EMAIL']
+    # sender_pass = os.environ['SENDER_PASSWORD']
+    # receiver_address = os.environ['RECEIVER_EMAIL']
+    sender_address = os.getenv('SENDER_EMAIL')
+    sender_pass = os.getenv('SENDER_PASSWORD')
+    receiver_address = os.getenv('RECEIVER_EMAIL')
 
     #Setup the MIME
     message = MIMEMultipart()
