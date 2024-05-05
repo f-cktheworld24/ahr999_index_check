@@ -2,7 +2,7 @@ name: AHR999 Index Check
 
 on:
   schedule:
-    - cron:  '0 4 * * *'
+    - cron:  '16 5 * * *'
 
 jobs:
   build:
