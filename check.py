@@ -22,7 +22,7 @@ def send_email(ahr999_index):
     message.attach(MIMEText(mail_content, 'plain'))
 
     #Use QQ's smtp server to send email.
-    session = smtplib.SMTP_SSL('smtp.qq.com', 465) #use QQ with port
+    session = smtplib.SMTP_SSL('smtp.126.com', 465) #use QQ with port
     session.login(sender_address, sender_pass) #login with mail_id and password
     text = message.as_string()
     session.sendmail(sender_address, receiver_address, text)
