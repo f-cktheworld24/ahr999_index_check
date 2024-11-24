@@ -33,17 +33,17 @@ def send_email(ahr999_index):
     smtp_server = 'smtp.163.com'
     smtp_port = 465
     
-    # 发件人邮箱地址和密码
-    sender_email = os.getenv('SENDER_EMAIL')  # 这里替换为您自己的发件人邮箱地址
-    sender_password = os.getenv('SENDER_PASSWORD')  # 这里是你的授权码？ 非邮箱登录密码
+    # 发件人邮箱地址和密码，以123456@163.com和授权码abcdefg为例子
+    sender_email = '123456@163.com'  # 把123456@163.com替换为您自己的发件人邮箱地址
+    sender_password = 'abcdefg'  # 这里是你的授权码, 非邮箱登录密码，把abcdefg替换为自己的授权码
     
-    # 收件人邮箱地址
-    recipient_email = os.getenv('RECEIVER_EMAIL')
+    # 收件人邮箱地址,以789101112@qq.com为例子
+    recipient_email = '789101112@qq.com'
     
-    # 创建一封邮件，文本内容为 "Hello, World!"
+    # 创建一封邮件，文本内容为 "太好啦，ahr999_index小于1.2，速速定投！！！当前ahr999_index的值为:xxxx"
     message = MIMEText("太好啦，ahr999_index小于1.2，速速定投！！！当前ahr999_index的值为: {}".format(ahr999_index))
-    message['From'] = Header('发件人昵称 <{}>'.format(sender_email), 'utf-8')  # 设置发件人昵称
-    message['To'] = Header('收件人昵称 <{}>'.format(recipient_email), 'utf-8')  # 设置收件人昵称
+    message['From'] = Header('123456@163.com')  # 设置发件人昵称,把123456@163.com替换为您自己的发件人邮箱地址
+    message['To'] = Header('789101112@qq.com')  # 设置收件人昵称,把789101112@qq.com替换为您自己的发件人邮箱地址
     message['Subject'] = Header('AHR999 Index Alert', 'utf-8')  # 设置邮件主题
     
     try:
